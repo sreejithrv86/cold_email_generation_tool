@@ -54,7 +54,7 @@ Final Output: Cold email is displayed back to the user via Streamlit.
   pip install -r requirements.txt
 ```
 3) Create a new account in https://console.groq.com/login and inside API Keys section 
-  create a new API KEY and update it in .env file with the given environment variable[GROQ_API_KEY].
+  create a new API KEY and update it in .env file after base64 encoding against the given environment variable[GROQ_API_KEY].
 
 ## Usage
 
