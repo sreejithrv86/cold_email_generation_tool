@@ -5,10 +5,11 @@ from langchain_core.output_parsers import JsonOutputParser
 from langchain_groq import ChatGroq
 import os
 from logging_config import logger
+from util import decode_base64_encode_string
 
 # Load environment variables
 load_dotenv()
-key = os.getenv('GROQ_API_KEY')
+key = decode_base64_encode_string(os.getenv('GROQ_API_KEY'))
 model = os.getenv('MODEL')
 user_name = os.getenv('USERNAME')
 

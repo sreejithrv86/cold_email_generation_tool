@@ -1,4 +1,6 @@
 import re
+import base64
+
 
 def clean_text(text):
     # Remove HTML tags
@@ -14,6 +16,7 @@ def clean_text(text):
     # Remove extra whitespace
     text = ' '.join(text.split())
     return text
+
 
 def refine_link(result, technical_skills):
     # Extract relevant links using technical skills
@@ -36,3 +39,15 @@ def refine_link(result, technical_skills):
         print("Error:", e)
 
     return refined_links
+
+
+def decode_base64_encode_string(encoded_str):
+    decoded_bytes = base64.b64decode(encoded_str)
+    decoded_str = decoded_bytes.decode('utf-8')
+    return decoded_str
+
+
+def encode_base64_string(original_str):
+    encoded_bytes = base64.b64encode(original_str.encode('utf-8'))
+    encoded_str = encoded_bytes.decode('utf-8')
+    return encoded_str
